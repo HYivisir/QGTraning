@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<stdlib.h>
 #include"linkedList.c"
 
@@ -38,11 +38,13 @@ int main(){
 			}
 			case '2': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
-				};
+				}
 				if(isEmpty(L)) {
 					printf("该链表已为空\n按任意键继续");
 					getch();
+					system("cls");
 					break;
 					}
 				deleteLinkedList(L);
@@ -51,8 +53,9 @@ int main(){
 			}
 			case '3': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
-				};
+				}
                 printf("请输入元素的值(仅限数字):");
                 scanf("%d",&x);
 				L = insertEle(L,x);
@@ -63,8 +66,9 @@ int main(){
 				
 			case '4': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
-				};
+				}
 				printf("请输入您想删除的位置");
 				scanf("%d",&pos);
 				L = deleteEle(L,pos);
@@ -74,8 +78,9 @@ int main(){
 			}
 			case '5': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
-				};
+				}
 				printf("请输入您想查询的数据");
 				scanf("%d",&x);
 				EleSearch(L,x);
@@ -84,16 +89,20 @@ int main(){
 			}
 			case '6': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
-				};
+				}
 				traverseList(L);
 				system("cls");
 				break;
 			}
 			case '7': {
-				if(!isExist(L)) {
+				if(!isExist(L)||isEmpty(L)) {
+					printf("链表为空\n按任意键继续");
+					getch();
+					system("cls");
 					break;
-				};
+				}
 				printList(L);
 				getchar();
 				system("cls");
@@ -101,8 +110,9 @@ int main(){
 			}
 			case '8': {
 				if(!isExist(L)) {
-					break;
-				};
+					system("cls");
+					return;
+				}
 				if(isEmpty(L)){
 					printf("该链表为空！\n");
 				}else{

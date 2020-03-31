@@ -56,11 +56,11 @@ void EleSearch(DList L,int x){
     }
     if(p == NULL){
         printf("查询错误");
-        getchar();
+        getch();
     }
     else{
         printf("定位成功！位置是：%d",i);
-        getchar();
+        getch();
     };
 }
 
