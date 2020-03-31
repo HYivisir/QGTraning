@@ -27,18 +27,14 @@ DList createList(){
     L->next = NULL;
     n = L;
     n->next = NULL;
-    int x;
-    if(scanf("%d",&x)==1){
-        p = (DList)malloc(sizeof(Node));
-        p->data = x;
-        p->next = n->next;
-        n->next = p;
-        n = p;
-    }else{
-        printf("输入错误，请重新初始化");
-        return NULL;
-    };
+    int x = 0;
+    p = (DList)malloc(sizeof(Node));
+    p->data = x;
+    p->next = n->next;
+    n->next = p;
+    n = p;
     n->next = NULL;
+    printf("初始化成功！\n按任意键继续");
     return L;
 }
 // 链表状态
@@ -50,6 +46,7 @@ int isEmpty(DList L){
 
 // 元素查找
 void EleSearch(DList L,int x){
+    if(!isExist(L)) return;
     DList p;
     p = L->next;
     int i;
@@ -67,52 +64,62 @@ void EleSearch(DList L,int x){
     };
 }
 
-// 插入元素 t为目标元素
-DList insertEle(DList L,int pos,int x){
+// 插入元素
+DList insertEle(DList L,int x){
+    if(!isExist(L)) return;
     DList p,t;
     p = L->next;
-    int i;
-    for(i=0;i<pos-1;i++){
-        p = p->next;
-    };
     t = (List)malloc(sizeof(Node));
     t->data = x;
-    t->next = p->next;
-    p->next->pre = t;
-    t->pre = p;
-    p->next = t;
+    t->next = p;
+    L->next = t;
+    p->pre = t;
+    t->pre = L;
+    L->next = t;
+    printf("插入数据成功\n");
+	printList(L);
+    getchar();
     return L;
 }
 
 // 删除链表中的第i个节点
 DList deleteEle(DList L ,int i){
+    if(!isExist(L)) return;    
     int pos = 1;
     DList p;
     p = L->next;
     if(p == NULL){
-        printf("位置错误！");
+        printf("位置错误！\n按任意键继续");
+        getchar();
     }else if(p->next == NULL){
         p->next->pre = NULL;
         free(p);
+        printf("删除成功\n按任意键继续");
+	    getchar();
     }else{
         p->pre->next = p->next;
         p->next->pre = p->pre;
         free(p);
+        printf("删除成功\n按任意键继续");
+	    getchar();
     };
     return L;
 }
 // 打印列表
 void printList(DList L){
+    if(!isExist(L)) return;    
     if(isEmpty(L)){
         printf("链表为空！\n");
     }
     else{
+        printf("列表顺序为：\n");
         DList p = (List)malloc(sizeof(Node));
         p = L->next;
-        while(p != NULL){
+        while(p->next != NULL){
             printf("%d->",p->data);
             p = p->next;
-        }
+        };
+        printf("0");
     };
     printf("\n");
 }
@@ -120,6 +127,7 @@ void printList(DList L){
 
 void traverseList(DList L)
 {
+    if(!isExist(L)) return;
     DList p = L->next;
     while (p != NULL)
     {

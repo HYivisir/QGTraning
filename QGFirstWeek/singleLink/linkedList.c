@@ -20,9 +20,11 @@ int isExist(List L){
 // 初始化链表
 List createLinkedList(void){
 	List L = (List)malloc(sizeof(struct Node));
+	List p = (List)malloc(sizeof(struct Node));
+	p = NULL;
 	if(!isExist(L)) return;
 	L->element = 0;
-	L->next = NULL;
+	L->next = p;
 	printf("初始化成功！\n按任意键继续");
 	getch();
 	return L;
@@ -62,19 +64,18 @@ List find(int x,List L){
 	}
 	if(p->next == NULL){
 		printf("定位失败\n按任意键继续");
-		getchar();
+		getch();
 		return NULL;
 	}
 	else{
 		printf("定位成功\n按任意键继续");
-		getchar();
+		getch();
 		return p;
 		
 	}
 }
 //查询前面的节点
 List findFormer(int x,List L){
-	if(!isExist(L)) return NULL;
 	List p = L;
 	while(p->next != NULL && p->next->element != x){
 		p = p->next;
@@ -82,29 +83,15 @@ List findFormer(int x,List L){
 	};
 	if(p->next == NULL){
 		printf("定位失败\n按任意键继续");
+		getch();
 		return NULL;
 	}
 	else{
-		printf("定位成功\n按任意键继续");
 		return p;
 	};
 }
 
-// 插入节点
-void insertNode(List L,int x){
-	if(!isExist(L)) return;
-	List temp = (List)malloc(sizeof (struct Node));
-	if(temp == NULL){
-		printf("内存错误\n按任意键继续");
-		getchar();	
-		getchar();
-	};
-	temp->element = x;
-	temp->next = NULL;
-	L->next = temp;
-	printf("插入数据成功\n按任意键继续");
-	getchar();
-}
+
 // 删除节点
 void deleteNode(List L){
 	if(!isExist(L)) return;
@@ -127,9 +114,9 @@ void deleteNode(List L){
 //打印链表
 void printList(List L){
 	if(!isExist(L)) return;
-	List p = L->next;
+	List p = L;
 	printf("列表排序为:\n");
-	while(p->next != NULL){
+	while(p != NULL){
 		printf("%d -> ",p->element);
 		p=p->next;
 	};
@@ -139,11 +126,11 @@ void printList(List L){
 // 逆序链表
 void reverse(List L){
 	if(!isExist(L)) return;
-	if(isEmpty){ 
-		printf("链表为空\n按任意键继续");
-		getchar();
-		return;
-	}
+	// if(isEmpty){ 
+	// 	printf("链表为空\n按任意键继续");
+	// 	getchar();
+	// 	return;
+	// }
 	List currentPst,nextPst,formerPst;
 	currentPst = L->next;
 	formerPst = NULL;
@@ -159,7 +146,23 @@ void reverse(List L){
 	getchar();
 }
 
-
+// 插入节点
+void insertNode(List L,int x){
+	if(!isExist(L)) return;
+	List p;
+	p = L->next;
+	List temp = (List)malloc(sizeof (struct Node));
+	if(temp == NULL){
+		printf("内存错误\n按任意键继续");
+		getchar();	
+		getchar();
+	};
+	temp->element = x;
+	temp->next = p;
+	L->next = temp;
+	printf("插入数据成功\n");
+	printList(L);
+}
 
 
 

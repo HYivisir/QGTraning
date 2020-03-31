@@ -53,11 +53,9 @@ int main(){
 				if(!isExist(L)) {
 					break;
 				};
-                printf("请输入您想插入元素的位置:");
-                scanf("%d",&pos);
                 printf("请输入元素的值(仅限数字):");
                 scanf("%d",&x);
-				L = insertEle(L,pos,x);
+				L = insertEle(L,x);
 				getchar();
 				system("cls");
 				break;
@@ -110,6 +108,7 @@ int main(){
 				}else{
 					printf("该链表不为空！\n");
 				}
+				getchar();
 				system("cls");
 				break;
 			}

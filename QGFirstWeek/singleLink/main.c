@@ -32,7 +32,6 @@ int main(){
 			case '1': {
 				L = createLinkedList();
 				p = L->next;
-				getchar();
 				system("cls");
 				break;
 			}
@@ -100,6 +99,7 @@ int main(){
 					break;
 				}
 				isEmpty(L);
+				getch();
 				system("cls");
 				break;
 			}
