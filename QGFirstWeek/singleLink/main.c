@@ -1,4 +1,4 @@
-// Encoding: UTF-8
+﻿// Encoding: UTF-8
 #include<stdio.h>
 #include"linkedList.c"
 #include<stdlib.h>
@@ -6,7 +6,7 @@ int main(){
 	system("chcp 65001");
 	char option = '1';
 	char trash[20];
-	List L,p;
+	List L = NULL,p;
 	int x;
 	while(option != '9'){
 		printf("----------------------------------------\n\
@@ -43,19 +43,36 @@ int main(){
 				break;
 			}
 			case '3': {
-				insertNode(L,p);
-				getchar();
-				system("cls");
-				break;
+				
+				printf("请输入数据(数字):");
+				if(scanf("%d",&x) == 0) {
+					printf("输入错误\n按任意键继续");
+					getch();	
+					break;
+				}else if(!isExist(L)) {
+					break;
+				}
+				else{
+					insertNode(L,x);
+					getchar();
+					system("cls");
+					break;
+				}
 			}
 				
 			case '4': {
+				if(!isExist(L)) {
+					break;
+				}
 				deleteNode(L);
 				getchar();
 				system("cls");
 				break;
 			}
 			case '5': {
+				if(!isExist(L)) {
+					break;
+				}
 				printf("请输入您想查询的数据");
 				scanf("%d",&x);
 				find(x,L);
@@ -63,17 +80,25 @@ int main(){
 				break;
 			}
 			case '6': {
+				if(!isExist(L)) {
+					break;
+				}
 				reverse(L);
 				system("cls");
 				break;
 			}
 			case '7': {
+				if(!isExist(L)) {
+					break;
+				}
 				printList(L);
-				getchar();
 				system("cls");
 				break;
 			}
 			case '8': {
+				if(!isExist(L)) {
+					break;
+				}
 				isEmpty(L);
 				system("cls");
 				break;

@@ -1,4 +1,4 @@
-// Encoding:UTF-8
+﻿// Encoding:UTF-8
 #include<stdio.h>
 #include<stdlib.h>
 struct Node{
@@ -11,7 +11,7 @@ typedef struct Node* List;
 int isExist(List L){
 	if(L == NULL){
 		printf("链表不存在\n请先初始化列表");
-		getchar();
+		getch();
 		return 0;
 	}else{
 		return 1;
@@ -24,6 +24,7 @@ List createLinkedList(void){
 	L->element = 0;
 	L->next = NULL;
 	printf("初始化成功！\n按任意键继续");
+	getch();
 	return L;
 }
 
@@ -90,24 +91,17 @@ List findFormer(int x,List L){
 }
 
 // 插入节点
-void insertNode(List L,List p){
+void insertNode(List L,int x){
 	if(!isExist(L)) return;
-	int x;
-	printf("请输入数据(数字):");
-	if(scanf("%d",&x) != 1) {
-		printf("输入错误\n按任意键继续");
-		getchar();
-		getchar();
-		return;
-	}
 	List temp = (List)malloc(sizeof (struct Node));
 	if(temp == NULL){
 		printf("内存错误\n按任意键继续");
 		getchar();	
+		getchar();
 	};
 	temp->element = x;
 	temp->next = NULL;
-	p->next = temp;
+	L->next = temp;
 	printf("插入数据成功\n按任意键继续");
 	getchar();
 }

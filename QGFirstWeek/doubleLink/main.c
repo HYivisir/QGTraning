@@ -6,7 +6,7 @@ int main(){
 	system("chcp 65001");
 	char option = '1';
 	char trash[20];
-	List L,p;
+	DList L = NULL,p;
 	int x,pos;
 	while(option != '9'){
 		printf("----------------------------------------\n\
@@ -37,10 +37,12 @@ int main(){
 				break;
 			}
 			case '2': {
+				if(!isExist(L)) {
+					break;
+				};
 				if(isEmpty(L)) {
 					printf("该链表已为空\n按任意键继续");
-					getchar();
-					getchar()
+					getch();
 					break;
 					}
 				deleteLinkedList(L);
@@ -48,6 +50,9 @@ int main(){
 				break;
 			}
 			case '3': {
+				if(!isExist(L)) {
+					break;
+				};
                 printf("请输入您想插入元素的位置:");
                 scanf("%d",&pos);
                 printf("请输入元素的值(仅限数字):");
@@ -59,6 +64,9 @@ int main(){
 			}
 				
 			case '4': {
+				if(!isExist(L)) {
+					break;
+				};
 				printf("请输入您想删除的位置");
 				scanf("%d",&pos);
 				L = deleteEle(L,pos);
@@ -67,6 +75,9 @@ int main(){
 				break;
 			}
 			case '5': {
+				if(!isExist(L)) {
+					break;
+				};
 				printf("请输入您想查询的数据");
 				scanf("%d",&x);
 				EleSearch(L,x);
@@ -74,17 +85,26 @@ int main(){
 				break;
 			}
 			case '6': {
+				if(!isExist(L)) {
+					break;
+				};
 				traverseList(L);
 				system("cls");
 				break;
 			}
 			case '7': {
+				if(!isExist(L)) {
+					break;
+				};
 				printList(L);
 				getchar();
 				system("cls");
 				break;
 			}
 			case '8': {
+				if(!isExist(L)) {
+					break;
+				};
 				if(isEmpty(L)){
 					printf("该链表为空！\n");
 				}else{

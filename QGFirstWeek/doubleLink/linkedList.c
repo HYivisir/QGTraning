@@ -8,6 +8,17 @@ typedef struct DblNode{
 }Node,*List;
 typedef Node* DList;
 
+// 链表是否存在
+int isExist(List L){
+	if(L == NULL){
+		printf("链表不存在\n请先初始化列表");
+		getch();
+		return 0;
+	}else{
+		return 1;
+	};
+}
+
 
 // 初始化链表 L为头,n为指向终端的指针
 DList createList(){
