@@ -58,17 +58,18 @@ void isEmpty(List L){
 List find(int x,List L){
 	if(!isExist(L)) return NULL;
 	List p = L->next;
+	int i=1;
 	while(p != NULL && p->element != x ){
 		p = p->next;
-		if(p->next == NULL) break;
+		i++;
 	}
-	if(p->next == NULL){
+	if(p == NULL){
 		printf("定位失败\n按任意键继续");
 		getch();
 		return NULL;
 	}
 	else{
-		printf("定位成功\n按任意键继续");
+		printf("定位成功\n该节点位置为： %d",i);
 		getch();
 		return p;
 		
@@ -101,7 +102,7 @@ void deleteNode(List L){
 	List p = find(x,L);
 	List former;
 	if(p == NULL){
-		printf("数据不存在\n按任意键继续");
+		printf("数据不存在\n按任意键继续\n");
 		getchar();
 		return ;
 	};

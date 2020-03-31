@@ -36,13 +36,19 @@ int main(){
 				break;
 			}
 			case '2': {
-				if(!isExist(L)) return;
+				if(!isExist(L)) {
+					system("cls");
+					break;
+				}
 				deleteLinkedList(L);
 				system("cls");
 				break;
 			}
 			case '3': {
-				
+				if(!isExist(L)) {
+					system("cls");
+					break;
+				}
 				printf("请输入数据(数字):");
 				if(scanf("%d",&x) == 0) {
 					printf("输入错误\n按任意键继续");
@@ -61,6 +67,7 @@ int main(){
 				
 			case '4': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
 				}
 				deleteNode(L);
@@ -70,6 +77,7 @@ int main(){
 			}
 			case '5': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
 				}
 				printf("请输入您想查询的数据");
@@ -80,6 +88,7 @@ int main(){
 			}
 			case '6': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
 				}
 				reverse(L);
@@ -88,6 +97,7 @@ int main(){
 			}
 			case '7': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
 				}
 				printList(L);
@@ -96,6 +106,7 @@ int main(){
 			}
 			case '8': {
 				if(!isExist(L)) {
+					system("cls");
 					break;
 				}
 				isEmpty(L);
