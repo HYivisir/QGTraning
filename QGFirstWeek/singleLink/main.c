@@ -49,7 +49,7 @@ int main(){
 					system("cls");
 					break;
 				}
-				printf("请输入数据(数字):");
+				printf("请输入数据(int):");
 				if(scanf("%d",&x) == 0) {
 					printf("输入错误\n按任意键继续");
 					getch();	
