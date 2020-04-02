@@ -20,6 +20,9 @@ void searchMid(Link L){
         printf("\n链表节点数为偶数，不存在中间位置\n按任意键继续");
         getch();
         return;
+    }else if(i==1){
+        printf("\n已找到中间位置：0\n该节点数据为：%d\n按任意键继续",head->data);
+        getch();
     }else{
         slow = head->next;
         fast = head->next->next;
@@ -39,15 +42,28 @@ Link createList(){
     Link head,p1,temp;
     int i=0,length;
     printf("请输入链表长度:");
-    scanf("%d",&length);
+    if(!(scanf("%d",&length))){
+        printf("创建失败，请重新创建\n");
+        getch();
+        return NULL;
+    }
     head  = (Link)malloc(sizeof(Node));
     printf("请输入第%d个节点的数据(int):",i);
-    scanf("%d",&head->data);
+    if(!(scanf("%d",&head->data))){
+        printf("创建失败，请按规范数据类型输入\n");
+        getch();
+        return NULL;
+    };
+    head -> next = NULL;
     p1 = head;
     for(i=1;i<length;i++){
         temp = (Link)malloc(sizeof(Node));
         printf("请输入第%d个节点的数据(int):",i);
-        scanf("%d",&temp->data);
+        if(!(scanf("%d",&temp->data))){
+            printf("创建失败，请按规范数据类型输入\n");
+            getch();
+            return NULL;
+        };
         temp->next = NULL;
         p1->next = temp;
         p1 = temp;

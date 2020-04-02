@@ -54,59 +54,78 @@ void isEmpty(List L){
 		printf("链表不为空\n按任意键继续");
 	}
 }
-// 查询节点
-List find(int x,List L){
+// 搜索节点
+List find(int pos,List L){
 	if(!isExist(L)) return NULL;
 	List p = L->next;
-	int i=1;
-	while(p != NULL && p->element != x ){
+	int i=0;
+	for(i;i <= pos;i++){
+		p = p->next;
+		if(p == NULL){
+			printf("\n未找到该节点\n按任意键继续");
+			getch();
+			return NULL;
+		};
+	}
+	printf("定位成功！\n");
+	getch();
+	return p;
+}
+
+// 查询节点
+void searchNode(int x,List L){
+	if(!isExist(L)) return NULL;
+	List p = L->next;
+	int i=0;
+	int flag = 0;
+	while(p != NULL){
+		if(p->element == x ){
+			flag = 1;
+			printf("定位成功\n节点位置为： %d\n",i);
+		}
 		p = p->next;
 		i++;
 	}
-	if(p == NULL){
+	if(flag == 0){
 		printf("定位失败\n按任意键继续");
 		getch();
-		return NULL;
+		return;
+	};	
+	getch();
 	}
-	else{
-		printf("定位成功\n该节点位置为： %d",i);
-		getch();
-		return p;
-		
-	}
-}
+
 //查询前面的节点
-List findFormer(int x,List L){
+List findFormer(int pos,List L){
 	List p = L;
-	while(p->next != NULL && p->next->element != x){
+	int i=0;
+	for(i;i <= pos;i++){
 		p = p->next;
-		if(p->next == NULL) break;
-	};
-	if(p->next == NULL){
-		printf("定位失败\n按任意键继续");
-		getch();
-		return NULL;
+		if(p == NULL){
+			printf("\n未找到该节点\n按任意键继续");
+			getch();
+			return NULL;
+		};
 	}
-	else{
-		return p;
-	};
+	printf("定位成功！\n");
+	getch();
+	return p;
 }
 
 
 // 删除节点
 void deleteNode(List L){
 	if(!isExist(L)) return;
-	int x;
-	printf("请输入您想删除的数据:");
-	scanf("%d",&x);
-	List p = find(x,L);
+	int pos;
+	printf("请输入您想删除的位置:");
+	scanf("%d",&pos);
+	List p = find(pos,L);
 	List former;
 	if(p == NULL){
-		printf("数据不存在\n按任意键继续\n");
+		printf("\n数据不存在\n按任意键继续\n");
 		getchar();
 		return ;
 	};
-	former = findFormer(x,L);
+	former = findFormer(pos-1,L);
 	former->next = p->next;
 	free(p);
 	printf("删除成功\n按任意键继续");

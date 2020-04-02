@@ -9,8 +9,13 @@ int main(){
     printf("奇偶位置进行调换：\n");
     Link L;
     L = createList();
-    printList(L);
-    Replace(L);
-    getch();
+    if(L){
+        printList(L);
+        Replace(L);
+        getch();
+    }else{
+        printf("按任意键退出\n");
+        getch();
+    }
     return 0;
 }

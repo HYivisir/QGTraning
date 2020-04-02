@@ -80,9 +80,9 @@ int main(){
 					system("cls");
 					break;
 				}
-				printf("请输入您想查询的数据");
+				printf("请输入您想查询的数据:");
 				scanf("%d",&x);
-				find(x,L);
+				searchNode(x,L);
 				system("cls");
 				break;
 			}
