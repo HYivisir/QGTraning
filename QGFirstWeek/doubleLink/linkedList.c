@@ -49,19 +49,21 @@ void EleSearch(DList L,int x){
     if(!isExist(L)) return;
     DList p;
     p = L->next;
-    int i;
-    while(p!=NULL && p->data != x){
+    int i=0;
+    int flag=0;
+    while(p!=NULL){
+        if(p->data == x){
+            flag =1;
+            printf("定位成功！节点位置是：%d\n",i);
+        }
         p=p->next;
         i++;
     }
-    if(p == NULL){
-        printf("查询错误");
+    if(flag == 0){
+        printf("查询错误\n按任意键继续");
         getch();
     }
-    else{
-        printf("定位成功！位置是：%d",i);
-        getch();
-    };
+    getch();
 }
 
 // 插入元素
