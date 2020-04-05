@@ -92,7 +92,7 @@ void searchNode(int x,List L){
 		return;
 	};	
 	getch();
-	}
+}
 
 //查询前面的节点
 List findFormer(int pos,List L){

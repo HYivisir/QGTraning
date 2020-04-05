@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url(../image/background.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.load{
+    width: 300px;
+    height: 450px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    background-color: white;
+    box-shadow:0 5px 5px 0 gray ;
+}
+
+.switch span{
+    font-size: 19.6px;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    left: 25%;
+    top: 50px;
+    color: white;
+    display: inline-block;
+    perspective: 400px;
+
+    
+}
+.switch span:hover{
+    /* color: #99CC33; */
+    cursor: pointer;
+    transform: perspective(400px) translateZ(50px);
+    transition: 1s;
+}
+
+#login{
+    border: #00d2ff 1px solid;
+    border-radius: 50px 0 0 50px;
+    background-color: #00d2ff;
+}
+#sign{
+    border: #928DAB 1px solid;
+    border-radius: 0 50px 50px 0;
+    background-color: #928DAB;
+}
+
+
+.text{
+    width: 240px;
+    height: 40px;
+    border: black solid 1px;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding-left: 30px;
+    margin: 10px 0;
+}
+.user{
+    background-image: url(../image/user.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+
+}
+.pw{
+    background-image: url(../image/password.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+
+.forgot{
+    cursor: pointer;
+    color: #ccc;
+    position: relative;
+    top: 20px;
+    left: 5px;
+}
+.forgot:hover{
+    color: #99CC33;
+}
+.btn{
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    left: 48%;
+    top: 250px;
+    transform: translate(-50%,0);
+    border: transparent solid 1px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #00d2ff;
+    color: white;
+    
+}
+
+.login{
+    visibility: visible;
+    opacity: 100;
+    transition: 1s;
+    position: absolute;
+    top: 100px;
+    left: 15px;
+}
+
+.register{
+    position: absolute;
+    top: 100px;
+    left: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+
+}
+
+.tip{
+    font-size: 12px;
+    color: #ccc;
+    margin: 1px 0;
+    visibility: hidden;
+}
+.ico1{
+    position: absolute;
+    top: 13%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico2{
+    position: absolute;
+    top: 58%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico3{
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico4{
+    position: absolute;
+    top: 43%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico5{
+    position: absolute;
+    top: 77%;
+    left: 85%;
+    visibility: hidden;
+}

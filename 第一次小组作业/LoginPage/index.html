@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link rel="stylesheet" href="./style/index.css">
+    
+</head>
+<body>
+    <div class="panel">
+        <div class="load">
+            <div class="switch"><span id="login">Login</span>
+                <!-- <span>/</span> -->
+                <span id="sign">Signup</span>
+            </div>
+            <div class="content" onselectstart="return false">
+                <form action="" class="login">
+                    <input type="text" placeholder="Username" name="user" class="text user">
+                    <span><a class="tip">合法格式:xxxxxx@xx.xxx(@后面只能为字母)</a></span>
+                    <img src="./image/True.png" class="ico1">
+                    <img src="./image/False.png" class="ico1">
+                    <input type="password" placeholder="Password" name="pw" class="text pw">
+                    <span><a class="tip">请输入至少8位合法字符：字母、数字、_</a></span>
+                    <img src="./image/True.png" class="ico2">
+                    <img src="./image/False.png" class="ico2">
+                    <br>
+                    <span class="forgot">Forgot?</span>
+                    <input type="submit" value="立即登录" class="btn">
+                    
+                </form>
+
+                <form action="" class="register" >
+                    <input type="text" placeholder="Username" name="user" class="text user">
+                    <span><a class="tip">合法格式:xxxxxx@xx.xxx</a></span>
+                    <img src="./image/True.png" class="ico3">
+                    <img src="./image/False.png" class="ico3">
+                    <input type="password" placeholder="Password"  name="pw" class="text pw">
+                    <span><a class="tip">请输入至少8位合法字符：字母、数字、_</a></span>
+                    <img src="./image/True.png" class="ico4">
+                    <img src="./image/False.png" class="ico4">
+                    <input type="password" placeholder="Check again" class="text pw">
+                    <span><a class="tip">请再次输入密码</a></span>
+                    <img src="./image/True.png" class="ico5">
+                    <img src="./image/False.png" class="ico5">
+                    <input type="submit" value="立即注册" class="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="./javascript/index.js"></script>
+</html>
