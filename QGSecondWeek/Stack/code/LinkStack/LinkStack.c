@@ -91,7 +91,7 @@ Status pushLStack(LinkStack *s,ElemType data){
     s->top = p;
     s->count ++;
     printf("入栈成功！\n按任意键继续");
-    getch();
+    getchar();
     return SUCCESS;
 }
 //出栈

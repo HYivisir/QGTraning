@@ -2,18 +2,22 @@ function isLegal(type,obj,ico,otip,flag){
     if(type == 0){
         var legal = /^\w+@[a-z0-9]+\.[a-z]+$/i;
     }else{
-        var legal = /\w{8}/;
+        var legal = /\w{8,}/g;
     }
+    var arr = new Array();
+    arr = obj.value.split(" ");
     
-    if(legal.test(obj.value)){
-        flag++;
+    if(legal.test(obj.value) && arr.length == 1){
+        flag = 1;
         ico[0].style.visibility = 'visible';
         ico[1].style.visibility = 'hidden';
         otip.style.visibility = 'hidden';
+
     }else{
         ico[0].style.visibility = 'hidden';
         ico[1].style.visibility = 'visible';
-        otip.style.visibility = 'visible'
+        otip.style.visibility = 'visible';
+
     }
     return flag;
 }
@@ -21,8 +25,10 @@ function isLegal(type,obj,ico,otip,flag){
 
 
 window.onload = function (){
-    var sflag = 0;
-    var lflag = 0;
+    var sflag = new Array();
+    var lflag = new Array();
+    sflag = [0,0,0];
+    lflag = [0,0];
     // 导航栏
     var oLogin = document.getElementById('login');
     var oSignup = document.getElementById('sign');
@@ -63,27 +69,26 @@ window.onload = function (){
     oUser[0].onfocus = function(){
         oTip[0].style.visibility = 'visible'
         this.onblur = function(){
-            lflag = isLegal(0,this,ico1,oTip[0],lflag);
-            
+            lflag[0] = isLegal(0,this,ico1,oTip[0],lflag[0]);
         }
     }
     oPw[0].onfocus = function(){
         oTip[1].style.visibility = 'visible';
         this.onblur = function(){
-            lflag = isLegal(1,this,ico2,oTip[1],lflag);
+            lflag[1] = isLegal(1,this,ico2,oTip[1],lflag[1]);
         }
     }
     oUser[1].onfocus = function(){
         oTip[2].style.visibility = 'visible'
         this.onblur = function(){
-            sflag = isLegal(0,this,ico3,oTip[2],sflag);
+            sflag[0] = isLegal(0,this,ico3,oTip[2],sflag[0]);
             
         }
     }
     oPw[1].onfocus = function(){
         oTip[3].style.visibility = 'visible';
         this.onblur = function(){
-            sflag = isLegal(1,this,ico4,oTip[3],sflag);
+            sflag[1] = isLegal(1,this,ico4,oTip[3],sflag[1]);
         }
     }
     oPw[2].onfocus = function(){
@@ -94,7 +99,7 @@ window.onload = function (){
                 ico5[1].style.visibility = 'hidden';
                 oTip[4].style.visibility = 'hidden';
                 oTip[4].innerHTML = "请再次输入密码";
-                sflag++;
+                sflag[2] = 1;
             }else{
                 ico5[0].style.visibility = 'hidden';
                 ico5[1].style.visibility = 'visible';
@@ -105,7 +110,7 @@ window.onload = function (){
     }
 
     oBtn[0].onclick = function (){
-        if(lflag >= 1){
+        if(lflag[0] && lflag[1]){
             alert("登陆成功！");
             
         }else{
@@ -114,8 +119,7 @@ window.onload = function (){
         }
     }
     oBtn[1].onclick = function (){
-        if(sflag >2){
-            alert(sflag);
+        if(sflag[0] && sflag[1] && sflag[2]){
             alert("注册成功！");
         }else{
             alert("请输入正确的用户名和密码！");
