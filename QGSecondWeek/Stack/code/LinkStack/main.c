@@ -10,14 +10,14 @@ int main(){
     LinkStack stack;
     ElemType data;
     ElemType top;
-    initLStack(&stack);
+    int flag = 0;
     while(option != '8'){
 		printf("----------------------------------------\n\
 -----------*欢迎进入链栈管理系统*-----------\n\
 ----------------------------------------\n\
 --------------*请选择以下功能*--------------\n\
 ----------------------------------------\n\
-||     1      ||-------->||链栈状态    ||\n\
+||     1      ||-------->||初始化栈    ||\n\
 ||     2      ||-------->||清空链栈    ||\n\
 ||     3      ||-------->||入栈        ||\n\
 ||     4      ||-------->||出栈        ||\n\
@@ -32,49 +32,72 @@ int main(){
 		gets(trash);
 		switch(option){
             case '1':{
-                isEmpty(&stack);
-                break;
+                initLStack(&stack);
+                flag = 1;
             }
             case '2':{
-                clearLStack(&stack);
-                break;
-            }
-            case '3':{
-                printf("请输入栈值：");
-                if(scanf("%d",&data)){
-                    pushLStack(&stack,data);
+                if(isExist(flag)){    
+                    clearLStack(&stack);
                     break;
                 }else{
-                    printf("输入错误，请重新输入\n按任意键继续");
-                    getch();
                     break;
                 }
             }
+            case '3':{
+                if(isExist(flag)){
+                    printf("请输入栈值：");
+                    if(scanf("%d",&data)){
+                        pushLStack(&stack,data);
+                        break;
+                    }else{
+                        printf("输入错误，请重新输入\n按任意键继续");
+                        getch();
+                        break;
+                    }
+                }else{
+                    break;
+                }
+                
+            }
             case '4':{
-                popLStack(&stack,&top);
-                break;
+                if(isExist(flag)){
+                    popLStack(&stack,&top);
+                    break;
+                }else{
+                    break;
+                }
+                
             }
             case '5':{
-                getTopLStack(&stack,&top);
-                break;
+                if(isExist(flag)){
+                    getTopLStack(&stack,&top);
+                    break;    
+                }else{
+                    break;
+                }
+                
             }
             case '6':{
-                LStackLength(&stack);
-                break;
+                if(isExist(flag)){
+                    LStackLength(&stack);
+                    break;
+                }else{
+                    break;
+                }
+                
             }
             case '7':{
                 destroyLStack(&stack);
+                flag = 0;
                 break;
             }
             case '8':{
-                printf("感谢您的使用！\n按任意键退出");
-                getch();
-
-
+                printf("感谢您的使用！\n");
+                system("pause");
             }
             default:{
                 printf("输入错误，请重新输入\n");
-                getch();
+                system("pause");
                 break;
             }
 

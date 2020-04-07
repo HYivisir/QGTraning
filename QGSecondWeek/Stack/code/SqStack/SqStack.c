@@ -36,7 +36,7 @@ Status getTopStack(SqStack *s,ElemType *e){
         getch();
         return ERROR;
     }else if(s->top == -1){
-        printf("该链表为空！\n");
+        printf("该栈为空！\n");
         getch();
         return ERROR;
     }else{
@@ -50,7 +50,7 @@ Status getTopStack(SqStack *s,ElemType *e){
 // 清空栈
 Status clearStack(SqStack*s){
     if(s->top == -1){
-        printf("该链表已为空！\n");
+        printf("该栈已为空！\n");
         getch();
         return ERROR;
     }else{
@@ -80,7 +80,7 @@ Status destroyStack(SqStack *s){
 // 检测栈长度
 Status stackLength(SqStack *s){
     if(s->top == -1){
-        printf("该链表为空！\n");
+        printf("该栈为空！\n");
         getch();
         return ERROR;
     }else{
@@ -105,7 +105,7 @@ Status pushStack(SqStack *s,ElemType data){
         s->top++;
         s->elem[s->top] = data;
         printf("入栈成功！\n");
-        getch();
+        system("pause");
         return SUCCESS;
     }
 }
@@ -125,5 +125,15 @@ Status popStack(SqStack *s){
         printf("出栈成功\n");
         getch();
         return SUCCESS;
+    }
+}
+// 判断栈存在
+Status isExist(int flag){
+    if(flag){
+        return SUCCESS;
+    }else{
+        printf("该栈不存在，请先初始化\n");
+        system("pause");
+        return ERROR;
     }
 }

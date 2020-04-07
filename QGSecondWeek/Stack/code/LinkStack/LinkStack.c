@@ -90,8 +90,8 @@ Status pushLStack(LinkStack *s,ElemType data){
     p->next = s->top;
     s->top = p;
     s->count ++;
-    printf("入栈成功！\n按任意键继续");
-    getchar();
+    printf("入栈成功！\n");
+    system("pause");
     return SUCCESS;
 }
 //出栈
@@ -109,6 +109,17 @@ Status popLStack(LinkStack *s,ElemType *data){
         printf("出栈成功！");
         getch();
         return SUCCESS;
+    }
+}
+
+// 判断栈存在
+Status isExist(int flag){
+    if(flag){
+        return SUCCESS;
+    }else{
+        printf("该栈不存在，请先初始化\n");
+        system("pause");
+        return ERROR;
     }
 }
 
