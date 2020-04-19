@@ -55,7 +55,7 @@ int Partition(int *a, int begin, int end);
  *  @description : 计数排序
  *  @param       : 数组指针a，数组长度size，数组最大值max
  */
-void CountSort(int *a, int size , int max);
+void CountSort(int *a, int size);
 
 
 /**
