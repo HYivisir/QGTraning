@@ -5,11 +5,10 @@
 
 int main(){
     system("chcp 65001");
-    int flag=0;
     char option;
     char trash[20];
     int size;
-    while(option != 5){
+    while(option != 6){
         menu();
         scanf("%c",&option);
         gets(trash);
@@ -93,6 +92,12 @@ int main(){
                 printf("基数排序完成:\n");
                 PrintArr(a,size);
                 system("pause");
+                break;
+            }
+            case '6':{
+                printf("感谢您的使用！\n");
+                system("pause");
+                exit(1);
                 break;
             }
             default:{
