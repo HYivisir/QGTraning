@@ -191,7 +191,30 @@ void RadixCountSort(int *a,int size){
 		rad *= 10;
 	}
 }
-
+// 颜色排序
+void ColorSort(int *a,int size){
+    int left = 0;
+    int right = size-1;
+    int temp;
+    for(int i=0;i<size;i++){
+        if(a[i]<a[left]){
+            temp = a[left];
+            a[left++] = a[i];
+            a[i] = temp;
+        };
+        if(a[i]>a[right]){
+            temp  = a[right];
+            a[right++] = a[i];
+            a[i] = temp;
+        };
+    };
+    
+}
+// 查询第几小
+int researchKey(int* a,int size,int key){
+    BucketSort(a,size);
+    return a[key];
+}
 // 打印菜单
 void menu(){
     printf("-----------------------------------------\n\
@@ -204,7 +227,9 @@ void menu(){
 ||     3      ||-------->||快速排序(递归)||\n\
 ||     4      ||-------->||计数排序      ||\n\
 ||     5      ||-------->||基数排序      ||\n\
-||     6      ||-------->||退出系统      ||\n\
+||     6      ||-------->||颜色排序      ||\n\
+||     7      ||-------->||寻找第k小值   ||\n\
+||     8      ||-------->||退出系统      ||\n\
 -----------------------------------------\n\
 请选择功能(以第一个字符为标准):");
 }
@@ -223,11 +248,3 @@ void bignum(){
 -----------------------------------------\n\
 请选择功能(以第一个字符为标准):");
 }
-
-// for(i=0;i<10000;i++){
-//     a[i] = rand()%1000; 
-// }
-// before = GetTickCount();
-// QuickSort_Recursion(a,0,size-1);
-// diff = GetTickCount() - before;
-// printf("快速排序(递归版):%fms\n",diff);

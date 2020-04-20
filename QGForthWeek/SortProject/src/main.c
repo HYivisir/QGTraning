@@ -15,7 +15,10 @@ int main(){
         switch(option){
             case '1':{
                 printf("请输入数组的长度:");
-                scanf("%d",&size);
+                while(!scanf("%d",&size)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                }
                 int a[size],i;                
                 srand((unsigned)(time(NULL)));
                 for(i=0;i<size;i++){
@@ -31,7 +34,10 @@ int main(){
             }
             case '2':{
                 printf("请输入数组的长度:");
-                scanf("%d",&size);
+                while(!scanf("%d",&size)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                }
                 int a[size],i;
                 int* temp = (int*)malloc(sizeof(int)*size);                
                 srand((unsigned)(time(NULL)));
@@ -48,7 +54,10 @@ int main(){
             }
             case '3':{
                 printf("请输入数组的长度:");
-                scanf("%d",&size);
+                while(!scanf("%d",&size)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                };
                 int a[size],i;                
                 srand((unsigned)(time(NULL)));
                 for(i=0;i<size;i++){
@@ -64,7 +73,10 @@ int main(){
             }
             case '4':{
                 printf("请输入数组的长度:");
-                scanf("%d",&size);
+                while(!scanf("%d",&size)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                }
                 int a[size],i;                
                 srand((unsigned)(time(NULL)));
                 for(i=0;i<size;i++){
@@ -80,7 +92,10 @@ int main(){
             }
             case '5':{
                 printf("请输入数组的长度:");
-                scanf("%d",&size);
+                while(!scanf("%d",&size)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                }
                 int a[size],i;                
                 srand((unsigned)(time(NULL)));
                 for(i=0;i<size;i++){
@@ -95,6 +110,49 @@ int main(){
                 break;
             }
             case '6':{
+                printf("请输入数组的长度:");
+                while(!scanf("%d",&size)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                }
+                int a[size],i;                
+                srand((unsigned)(time(NULL)));
+                for(i=0;i<size;i++){
+                    a[i] = rand()%3; 
+                }
+                printf("已随机生成数组:\n");
+                PrintArr(a,size);
+                ColorSort(a,size);
+                printf("颜色排序完成:\n");
+                PrintArr(a,size);
+                system("pause");
+                break;
+            }
+            case '7':{
+                printf("请输入数组的长度:");
+                while(!scanf("%d",&size)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                }
+                int key;
+                printf("您需要查询第几小的数字呢:");
+                while(!scanf("%d",&key)){
+                        printf("输入错误，请重新输入:");
+                        getchar();
+                }
+                int a[size],i;                
+                srand((unsigned)(time(NULL)));
+                for(i=0;i<size;i++){
+                    a[i] = rand()%100; 
+                }
+                printf("已随机生成数组:\n");
+                PrintArr(a,size);
+                int target = researchKey(a,size,key-1);
+                printf("第%d小的值为：%d\n",key,target);
+                system("pause");
+                break;
+            }
+            case '8':{
                 printf("感谢您的使用！\n");
                 system("pause");
                 exit(1);
@@ -102,7 +160,6 @@ int main(){
             }
             default:{
                 printf("输入错误，请重新输入！\n");
-                system("pause");
                 break;
             }      
         }
