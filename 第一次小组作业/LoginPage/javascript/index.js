@@ -49,8 +49,8 @@ window.onload = function (){
     // 按钮
     var oBtn = document.getElementsByClassName("btn");
     oLogin.onclick = function(){
-        oLogin.style.background = "#00d2ff";
-        oSignup.style.background = "#928DAB";
+        oLogin.style.color = "#03e9f4";
+        oSignup.style.color = "#fff";
         oForm1[0].style.visibility = "visible";
         oForm1[0].style.opacity = 100;
         oForm2[0].style.opacity = 0;
@@ -58,8 +58,8 @@ window.onload = function (){
     }
     
     oSignup.onclick = function(){
-        oSignup.style.background = "#00d2ff";
-        oLogin.style.background = "#928DAB";
+        oSignup.style.color = "#03e9f4";
+        oLogin.style.color = "#fff";
         oForm2[0].style.visibility = "visible";
         oForm2[0].style.opacity = 100;
         oForm1[0].style.opacity = 0;
