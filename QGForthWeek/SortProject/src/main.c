@@ -1,4 +1,4 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 #include"qgsort.c"
@@ -8,7 +8,7 @@ int main(){
     char option;
     char trash[20];
     int size;
-    while(option != 6){
+    while(option != '8'){
         menu();
         scanf("%c",&option);
         gets(trash);

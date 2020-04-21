@@ -95,6 +95,7 @@ void QuickSort_Recursion(int *a, int begin, int end){
 }
 
 
+
 // 计数排序
 void CountSort(int *a, int size){
     int max = a[0],min = a[0];
@@ -248,3 +249,5 @@ void bignum(){
 -----------------------------------------\n\
 请选择功能(以第一个字符为标准):");
 }
+
+
