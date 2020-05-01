@@ -26,7 +26,35 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow:0 15px 25px rgba(0, 0, 0, 0.6) ;
 }
-
+#msg{
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(204, 204, 204, 0.9);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    text-align: center;
+    box-shadow: 0px 15px 25px rgba(204, 204, 204, 0.5);;
+}
+#msg_a{
+    word-wrap: break-word;
+    font-size: 13px;
+    position: absolute;
+    width: 150px;
+    left: 25%;
+    top: 30%;
+    
+}
+#msg_btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+}
 .switch span{
     font-size: 19.6px;
     width: 70px;
@@ -191,3 +219,4 @@ input::-webkit-input-placeholder{
     left: 85%;
     visibility: hidden;
 }
+

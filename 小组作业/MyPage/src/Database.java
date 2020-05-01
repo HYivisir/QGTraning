@@ -9,19 +9,17 @@ public class Database {
         this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/myuser?serverTimezone=UTC",User,Password);
     }
 
-
-
     public void insert(String email,String psw,String imagePath) throws SQLException {
         PreparedStatement prep = connection.prepareStatement("INSERT INTO users VALUES(null,?,?,null)");
         prep.setString(1,email);
         prep.setString(2,psw);
         prep.execute();
     }
-    public void delete(int id) throws SQLException {
-        PreparedStatement prep = connection.prepareStatement("DELETE FROM users where id=?");
-        prep.setInt(1,id);
-        prep.execute();
-    }
+//    public void delete(int id) throws SQLException {
+//        PreparedStatement prep = connection.prepareStatement("DELETE FROM users where id=?");
+//        prep.setInt(1,id);
+//        prep.execute();
+//    }
     public Userdata getUser(String email) throws SQLException {
         PreparedStatement prep = connection.prepareStatement("SELECT * FROM users where email=?");
         prep.setString(1,email);

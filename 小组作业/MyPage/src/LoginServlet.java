@@ -1,3 +1,4 @@
+import net.sf.json.JSONObject;
 import org.codehaus.jackson.map.ObjectMapper;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,16 +33,19 @@ public class LoginServlet extends HttpServlet {
             Map<String,String> params = om.readValue(data, Map.class);
             String email = params.get("email").toString();
             String psw = params.get("psw").toString();
-
-            System.out.println(email + psw);
+            JSONObject msg = new JSONObject();
             Database database = new Database("root","843702140");
             Userdata userdata = database.check(email,psw);
             if(userdata == null){
                 System.out.println("email:" + email + "\npassword:" + psw);
                 System.out.println("账户不存在或者密码错误");
-                pwt.write("账户不存在或者密码错误");
+                msg.put("code",0);
+                msg.put("msgs","账户不存在或者密码错误");
+                pwt.print(msg);
             }else{
-                pwt.write("登录成功！");
+                msg.put("code",1);
+                msg.put("msgs","登录成功！");
+                pwt.print(msg);
                 database.close();
             }
         } catch (SQLException throwables) {

@@ -12,7 +12,7 @@ ctx2 = canvas2.getContext('2d');
 canvas2.width = 100;
 canvas2.height = 100;
 var half = canvas2.width / 2,
-//星星外围
+//星星外围（由内到外）
 gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
 gradient2.addColorStop(0.025, '#ccc');
 gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
@@ -62,11 +62,12 @@ var Star = function() {
     stars[count] = this;
 }
 
-Star.prototype.draw = function() {
+Star.prototype.run = function() {
     var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
     y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
     twinkle = random(10);
 
+    // 闪烁
     if (twinkle === 1 && this.alpha > 0) {
         this.alpha -= 0.05;
     } else if (twinkle === 2 && this.alpha < 1) {
@@ -75,7 +76,7 @@ Star.prototype.draw = function() {
 
     ctx.globalAlpha = this.alpha;
     ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
-    this.timePassed += this.speed;
+    this.timePassed += this.speed;  // 运动
 }
 
 for (var i = 0; i < maxStars; i++) {
@@ -91,7 +92,7 @@ function animation() {
     ctx.globalCompositeOperation = 'lighter';
     for (var i = 1,
     l = stars.length; i < l; i++) {
-        stars[i].draw();
+        stars[i].run();
     };
 
     window.requestAnimationFrame(animation);

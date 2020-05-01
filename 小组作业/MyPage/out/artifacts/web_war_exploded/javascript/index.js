@@ -48,6 +48,12 @@ window.onload = function (){
     var ico5 = document.getElementsByClassName('ico5');
     // 按钮
     var oBtn = document.getElementsByClassName("btn");
+    // 提示框
+    var Msg = document.getElementById("msg");
+    var msg_btn = document.getElementById("msg_btn");
+    var msg_a = document.getElementById("msg_a");
+    
+    // 表单切换
     oLogin.onclick = function(){
         oLogin.style.color = "#03e9f4";
         oSignup.style.color = "#fff";
@@ -109,9 +115,12 @@ window.onload = function (){
         }
     }
 
+    //提示框
+    function MSGBOX(Msg,msg_a,msg_btn){
 
+    }
     //ajax
-
+    //登录
     oBtn[0].onclick = function (){
 
         if(lflag[0] && lflag[1]){
@@ -121,14 +130,26 @@ window.onload = function (){
                 psw : oPw[0].value,
             }
             Pajax(url,data,function(res){
-                alert(res);
-                console.log(data);
+                res = JSON.parse(res);
+                Msg.style.display = "block";
+                msg_a.innerHTML = res.msgs;
+                msg_btn.addEventListener("click", function () {
+                Msg.style.display = "none";
+                })
+                if(res.code == 1) {
+                    alert("hahaha");
+                }
             });
         }else{
-            alert("请输入正确的用户名和密码！");
-            return false;
+            Msg.style.display = "block";
+            msg_a.innerHTML =  "请输入格式正确的用户名或密码";
+            msg_btn.addEventListener("click",function (){
+                Msg.style.display = "none";
+            })
         }
     }
+
+    //注册
     oBtn[1].onclick = function (){
         if(sflag[0] && sflag[1] && sflag[2]){
             let url = "http://localhost:8080/web_war_exploded/RegisterServlet";
@@ -137,13 +158,25 @@ window.onload = function (){
                 psw : oPw[1].value,
             }
             Pajax(url,data,function(res){
-                alert(res);
+            Msg.style.display = "block";
+            msg_a.innerHTML = res;
+            msg_btn.addEventListener("click",function (){
+                Msg.style.display = "none";
+            })
             });
         }else{
-            alert("请输入正确的用户名和密码！");
+            Msg.style.display = "block";
+            msg_a.innerHTML = "请输入格式正确的用户名或密码";
+            msg_btn.addEventListener("click",function (){
+                Msg.style.display = "none";
+            }) 
             return false;
         }
     }
+
+    
     
 }
+
+
 
