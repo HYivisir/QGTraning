@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"BinaryTree.c"
-
+#include"AQueue.c"
 int main(){
     system("chcp 65001");
     char option;
@@ -18,7 +18,7 @@ int main(){
                 if(isExist(flag)){
                     printf("树已初始化！\n");                    
                 }else{
-                    InitBiTree(T);
+                    InitBiTree(&T);
                     flag = 1;
                 }
                 break;
@@ -26,7 +26,7 @@ int main(){
             case '2':{
                 if(isExist(flag)){
                     printf("请输入字符串：\n");
-                    CreateBiTree(T,definition);
+                    CreateBiTree(&T,definition);
                     getchar();
                 }else
                 {
@@ -36,7 +36,7 @@ int main(){
             }
             case '3':{
                 if(isExist){
-                    DestroyBiTree(T);
+                    DestroyBiTree(&T);
                     flag = 0;
                 }else{
                     printf("树未初始化,没得销毁\n");
@@ -45,7 +45,7 @@ int main(){
             }
             case '4':{
                 if(isExist){
-                    PreOrderTraverse(T,print);
+                    PreOrderTraverse(&T,print);
                 }else{
                     printf("树未初始化!\n");
                 }
@@ -54,7 +54,7 @@ int main(){
             }
             case '5':{
                 if(isExist){
-                    InOrderTraverse(T,print);
+                    InOrderTraverse(&T,print);
                 }else{
                     printf("树未初始化!\n");
                 }
@@ -63,7 +63,7 @@ int main(){
             }
             case '6':{
                 if(isExist){
-                    PostOrderTraverse(T,print);
+                    PostOrderTraverse(&T,print);
                 }else{
                     printf("树未初始化!\n");
                 }

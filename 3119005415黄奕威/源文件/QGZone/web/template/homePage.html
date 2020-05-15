@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="theme-bg">
+<head>
+    <meta charset="UTF-8">
+    <title>QGZone</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/icon/logo.png">
+    <link rel="stylesheet" href="../css/homePage.css">
+</head>
+<body>
+    <div id="navi" class="theme-part">
+        <ul id="navi-bar">
+            <span><a id="header">QGZone</a></span>
+            <li><a href="./homePage.html">首页</a></li>
+            <li><a href="./gallary.html">相册</a></li>
+            <li><a href="./diary.html">日志</a></li>
+            <li><a href="./myPage.html">个人中心</a></li>
+            <li><a id="themes">主题</a></li>
+            <div id="theme-select" class="theme-part">
+                <div class="themes">深空蓝</div>
+                <div class="themes">琉璃青</div>
+                <div class="themes">炽焰红</div>
+                <div class="themes">经典紫</div>
+            </div>
+        </ul>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="player">
+        <audio src="../music/Merry Go.mp3" loop="loop" id="audio"></audio>
+        <div id="play"></div>
+    </div>
+    <div id="page-container">
+        <div id="home_logined">
+            <div id="pre" class="slide-btn"></div>
+            <div id="nex" class="slide-btn"></div>
+            <div class="welcome">
+                <div class="welcome-img" id="wel1"></div>
+                <div class="welcome-info">
+                    <span class="welcome-title"><a href="./homePage.html">QG空间</a></span>
+                    <span class="welcome-brief"><a>构造您的个人空间</a></span>
+                </div>
+            </div>
+            <div class="welcome">
+                <div class="welcome-img" id="wel2"></div>
+                <div class="welcome-info">
+                    <span class="welcome-title"><a href="./diary.html">QG日志</a></span>
+                    <span class="welcome-brief"><a>记录您的美好生活</a></span>
+                </div>
+            </div>
+            <div class="welcome">
+                <div class="welcome-img" id="wel3"></div>
+                <div class="welcome-info">
+                    <span class="welcome-title"><a href="./gallary.html">QG相册</a></span>
+                    <span class="welcome-brief"><a>捕捉您的美好瞬间</a></span>
+                </div>
+            </div>
+            <div class="welcome">
+                <div class="welcome-img" id="wel4"></div>
+                <div class="welcome-info">
+                    <span class="welcome-title"><a href="./myPage.html">个人中心</a></span>
+                    <span class="welcome-brief"><a>展示您的个人信息</a></span>
+                </div>
+            </div>
+        </div>
+        <div id="home_unlogin">
+            <ul class="tipinfos align-center">
+                <li><a>欢迎来到QG空间！请先</a><a class="infos" href="../index.html">登录</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="../js/main.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/stars.js"></script>
+<script src="../js/music.js"></script>
+<script src="../js/homePage.js"></script>
+</html>

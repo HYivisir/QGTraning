@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="theme-bg">
+<head>
+    <meta charset="UTF-8">
+    <title>QGZone</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/icon/logo.png">
+    <link rel="stylesheet" href="../css/myPage.css">
+</head>
+<body>
+    <div id="navi" class="theme-part">
+        <ul id="navi-bar">
+            <span><a id="header">QGZone</a></span>
+            <li><a href="./homePage.html">首页</a></li>
+            <li><a href="./gallary.html">相册</a></li>
+            <li><a href="./diary.html">日志</a></li>
+            <li><a href="./myPage.html">个人中心</a></li>
+            <li><a id="themes">主题</a></li>
+            <div id="theme-select" class="theme-part">
+                <div class="themes">深空蓝</div>
+                <div class="themes">琉璃青</div>
+                <div class="themes">炽焰红</div>
+                <div class="themes">经典紫</div>
+            </div>
+        </ul>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="msg">
+        <a id="msg_a">这是提示框</a>
+        <input type="button" value="确定" id="msg_btn">
+    </div>
+    <div id="player">
+        <audio src="../music/Merry Go.mp3" loop="loop" id="audio"></audio>
+        <div id="play"></div>
+    </div>
+    <div id="loading"></div>
+    <div id="page-container">
+        <div id="left-space">
+            <div id="unlogin">
+                <ul class="tipinfos align-center">
+                    <li><a>未登录！请先登录！</a><a class="infos" href="../index.html">登录</a></li>
+                </ul>
+            </div>
+            <div id="showPage" class="align-center">
+                <span>
+                    <div class="alter-icon"></div>
+                    <a class="alter-infos">修改信息</a>
+                </span>
+                <ul class="myinfo align-center">
+                    <li><a class="name-icon myicons">昵称：</a><a class="infos">aaaaaaaaaaa</a></li>
+                    <li><a class="sex-icon myicons">性别：</a><a class="infos">aaaaaaaaaaaaa</a></li>
+                    <li><a class="age-icon myicons">年龄：</a><a class="infos">aaaaaaaaaa</a></li>
+                    <li><a class="phone-icon myicons">电话：</a><a class="infos">aaaaaaaaaa</a></li>
+                    <li><a class="email-icon myicons">邮箱：</a><a class="infos">aaaaaaaa</a></li>
+                </ul>
+                <div id="right-space">
+                    <div id="head-img">
+                        <input type="file" accept="image/*" id="head-up">
+                    </div>
+                </div>    
+            </div>
+            <div id="alterPage" class="align-center">
+                <span>
+                    <div class="alter-icon"></div>
+                    <a class="alter-infos">保存信息</a>
+                </span>
+                <ul class="myinfo align-center">
+                    <li><a class="name-icon myicons">昵称：</a><input type="text" class="input-infos"></li>
+                    <li><a class="sex-icon myicons">性别：</a><select  id="sex-select">
+                                        <option value="male">男</option>
+                                        <option value="female">女</option>
+                                    </select></li>
+                    <li><a class="age-icon myicons">年龄：</a><input type="text" class="input-infos"></li>
+                    <li><a class="phone-icon myicons">电话：</a><input type="text" class="input-infos"></li>
+                    <li><a class="email-icon myicons">邮箱：</a><a class="infos"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     
+</body>
+<script src="../js/main.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/stars.js"></script>
+<script src="../js/myPage.js"></script>
+<script src="../js/music.js"></script>
+</html>

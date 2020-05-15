@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    /* background: #00B4DB; */
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    width: 100%;
+    height: 100%;
+}
+input{
+    outline: none;
+}
+
+/* 提示框 */
+#msg{
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(204, 204, 204, 0.9);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    text-align: center;
+    box-shadow: 0px 15px 25px rgba(204, 204, 204, 0.5);
+}
+#msg_a{
+    word-wrap: break-word;
+    font-size: 13px;
+    position: absolute;
+    width: 150px;
+    left: 25%;
+    top: 30%;
+    
+}
+#msg_btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+}
+
+/* 容器 */
+#container{
+    position: absolute;
+    width: 1200px;
+    height: 600px;
+    margin: auto;
+    padding: auto;
+    box-shadow:0 15px 25px rgba(0, 0, 0, 0.6) ;
+    border-radius: 10px;
+}
+
+#exhibition{
+    width: 75%;
+    height:100%;
+    background: url(/web/img/exhibition.jpg) no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+#panel{
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 75%;
+    border-radius: 0 10px 10px 0;
+} 
+
+/* 表单切换 */
+#switch span{
+    display: block;
+    float: left;
+    left: 10%;
+    margin-top: 50px;
+    position: relative;
+    font-size: 25px;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    perspective: 10px;
+}
+#login-tag{
+    color: #03e9f4;
+}
+#register-tag{
+    color: #fff;
+}
+#login-tag:hover,#register-tag:hover{
+    transform: perspective(10px) translateZ(1px);
+    transition: 1s;
+}
+/* 登录表格 */
+#login{
+    position: absolute;
+    top: 100px;
+    visibility: visible;
+    opacity: 100;
+    transition: 1s;
+}
+/* 注册表格 */
+#register{
+    position: absolute;
+    top: 100px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+/* 输入框 */
+.text{
+    color: white;
+    width: 240px;
+    height: 40px;
+    border: transparent;
+    border-bottom: 2px solid #fff;
+    padding-left: 30px;
+    margin: 30px 10px 10px 10px;
+    background: transparent;
+}
+input::-webkit-input-placeholder{
+    color: #fff;
+}
+
+.email{
+    background-image: url(/web/img/icon/user.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+
+}
+.pwd{
+    background-image: url(/web/img/icon/password.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+
+/* 按钮特效 */
+.btn{
+    width: 120px;
+    height: 40px;
+    position: relative;
+    margin-top: 40px;
+    border: transparent solid 1px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.5s;
+    animation: btn 1s linear infinite;
+    box-sizing: border-box;
+}
+
+.btn:hover{
+    background: #03e9f4;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+@keyframes btn{
+    0%{
+        box-shadow:-2px 0 5px 0 #03e9f4;
+    }
+    25%{
+        box-shadow:0 -2px 5px 0 #03e9f4;
+    }
+    50%{
+        box-shadow:2px 0 5px 0 #03e9f4;
+    }
+    75%{
+        box-shadow:0 2px 5px 0 #03e9f4;
+    }
+    100%{
+        box-shadow:-2px 0 5px 0 #03e9f4;
+    }
+    
+}
+/* 提示 */
+.tip{
+    font-size: 12px;
+    color: #03e9f4;
+    margin: 1px 10px;
+    visibility: hidden;
+}
+/* 正误判断 */
+.ico1{
+    position: absolute;
+    top: 13%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico2{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico3{
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico4{
+    position: absolute;
+    top: 40%;
+    left: 85%;
+    visibility: hidden;
+}
+.ico5{
+    position: absolute;
+    top: 68%;
+    left: 85%;
+    visibility: hidden;
+}
+/* 居中 */
+.align-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+

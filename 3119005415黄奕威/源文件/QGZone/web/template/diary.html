@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="theme-bg">
+<head>
+    <meta charset="UTF-8">
+    <title>QGZone</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/icon/logo.png">
+    <link rel="stylesheet" href="../css/diary.css">
+</head>
+<body>
+    <div id="msg">
+        <a id="msg_a">确定执行该操作吗？</a>
+        <input type="button" value="确定" id="msg_btn">
+        <input type="button" value="取消" id="cancel_btn">
+    </div>
+    <div id="navi" class="theme-part">
+        <ul id="navi-bar">
+            <span><a id="header">QGZone</a></span>
+            <li><a href="./homePage.html">首页</a></li>
+            <li><a href="./gallary.html">相册</a></li>
+            <li><a href="./diary.html">日志</a></li>
+            <li><a href="./myPage.html">个人中心</a></li>
+            <li><a id="themes">主题</a></li>
+            <div id="theme-select" class="theme-part">
+                <div class="themes">深空蓝</div>
+                <div class="themes">琉璃青</div>
+                <div class="themes">炽焰红</div>
+                <div class="themes">经典紫</div>
+            </div>
+        </ul>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="player">
+        <audio src="../music/Merry Go.mp3" loop="loop" id="audio"></audio>
+        <div id="play"></div>
+    </div>
+    <div id="loading"></div>
+    <div id="page-container">
+        <div id="left-space">
+            <!-- 未登录 -->
+            <div id="unlogin">
+                <ul class="un-tip align-center">
+                    <li><a>未登录！请先登录！</a><a class="infos" href="../index.html">登录</a></li>
+                </ul>
+            </div>
+            <!-- 已登陆 -->
+            <div id="logined">
+                <div id="tip">
+                    功能栏在这哟<div id="tip-arrow"></div>
+                </div>
+                <!-- 日志列表 -->
+                <div id="diary-panel" class="align-center">
+                    <ul id="all-diary">
+                        <!-- 示例 -->
+                        <!-- <li class="diary"><a class="diary-name">简介</a><a class="diary-tag">aaa</a><a class="diary-date">2020-01-01</a></li>
+                        <li class="diary"><a class="diary-name">日记</a><a class="diary-tag">bbb</a><a class="diary-date">2020-01-01</a></li>
+                        <li class="diary"><a class="diary-name">你好你好你好你好你好</a><a class="diary-tag">ccc</a><a class="diary-date">2020-01-01</a></li>
+                        <li class="diary"><a class="diary-name">你好你好你好你好你好</a><a class="diary-tag">ccc</a><a class="diary-date">2020-01-01</a></li>
+                        <li class="diary"><a class="diary-name">你好你好你好你好你好</a><a class="diary-tag">ccc</a><a class="diary-date">2020-01-01</a></li>
+                        <li class="diary"><a class="diary-name">你好你好你好你好你好</a><a class="diary-tag">ccc</a><a class="diary-date">2020-01-01</a></li>
+                        <li class="diary"><a class="diary-name">你好你好你好你好你好</a><a class="diary-tag">ccc</a><a class="diary-date">2020-01-01</a></li> -->
+                    </ul>
+                </div>
+                <!-- 阅读日志 -->
+                <div id="reader-panel">
+                    <input type="text" readonly id="reader-name" value="aaa">
+                    <input type="text" readonly id="reader-tag" value="">
+                    <input type="text" readonly id="reader-date" value="">
+                    <textarea  id="reader-context" cols="1" rows="auto" wrap="vitual" readonly></textarea>
+                    <input type="button" value="返回" id="return-btn">
+                </div>
+                <!-- 写日志 -->
+                <div id="edit-panel">
+                    <textarea  id="diary-context" cols="1" rows="auto" wrap="vitual"></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="right-space">
+            <!-- 搜索日志 -->
+            <div id="diary-search">
+                <div id="tag-search">
+                    <input type="text" placeholder="请输入关键字（用空格隔开）" id="input-tag">
+                    <input type="button" value="搜索" id="input-btn">
+                </div>
+                <div id="tag-classify">
+                    <span id="tag-header"><a>分类</a></span>
+                    <!-- 标签分类 -->
+                    <ul id="tag-list">
+                    </ul>
+                </div> 
+                <input type="button" id="add-diary" value="写一篇日志">
+            </div> 
+            <!-- 保存日志 -->
+            <div id="edit-save">
+                <input type="text" placeholder="请输入日志标题（日期将自动创建）" id="diary-name">
+                <input type="text" placeholder="请输入分类（用分号隔开）" id="diary-tag">
+                <input type="button" value="保存日志" id="save-btn">
+                <input type="button" value="取消编辑" id="quit-btn">    
+            </div>  
+        </div>
+    </div> 
+</body>
+<script src="../js/main.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/diary.js"></script>
+<script src="../js/stars.js"></script>
+<script src="../js/music.js"></script>
+</html>

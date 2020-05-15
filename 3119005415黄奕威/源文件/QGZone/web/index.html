@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>QGZone</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./img/icon/logo.png" type="image/x-ico">
+</head>
+<body>
+    <div id="msg">
+        <a id="msg_a">这是提示框</a>
+        <input type="button" value="确定" id="msg_btn">
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="container" class="align-center">
+        <div id="exhibition"></div>
+        <div id="panel">
+            <div id="switch">
+                <span><a id="login-tag">Login</a></span>
+                <span>/</span>
+                <span><a id="register-tag">Register</a></span>
+            </div>
+            <div id="login">
+                <form action="">
+                    <input type="text" class="text email" placeholder="Please enter your email">
+                    <span><a class="tip">合法格式:xxxxxx@xx.xxx(@后面只能为字母)</a></span>
+                    <img src="./img/icon/True.png" class="ico1">
+                    <img src="./img/icon/False.png" class="ico1">
+                    <input type="password" class="text pwd" placeholder="Please enter your password">
+                    <span><a class="tip">请输入至少8位合法字符：字母、数字、_</a></span>
+                    <img src="./img/icon/True.png" class="ico2">
+                    <img src="./img/icon/False.png" class="ico2">
+                    <input type="button" value="立即登录" class="btn align-center">
+                </form>
+            </div>
+            <div id="register">
+                <form action="">
+                    <input type="text" placeholder="Email" class="text email">
+                    <span><a class="tip">合法格式:xxxxxx@xx.xxx</a></span>
+                    <img src="./img/icon/True.png" class="ico3">
+                    <img src="./img/icon/False.png" class="ico3">
+                    <input type="password" placeholder="Password" class="text pwd">
+                    <span><a class="tip">请输入至少8位合法字符：字母、数字、_</a></span>
+                    <img src="./img/icon/True.png" class="ico4">
+                    <img src="./img/icon/False.png" class="ico4">
+                    <input type="password" placeholder="Check again" class="text pwd">
+                    <img src="./img/icon/True.png" class="ico5">
+                    <img src="./img/icon/False.png" class="ico5">
+                    <br>
+                    <input type="button" value="立即注册" class="btn align-center">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/object.js"></script>
+<script src="./js/ajax.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/stars.js"></script>
+</html>

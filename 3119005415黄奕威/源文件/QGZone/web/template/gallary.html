@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="theme-bg">
+<head>
+    <meta charset="UTF-8">
+    <title>QGZone</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/gallary.css">
+    <link rel="icon" href="../img/icon/logo.png">
+</head>
+<body>
+    <div id="navi" class="theme-part">
+        <ul id="navi-bar">
+            <span><a id="header">QGZone</a></span>
+            <li><a href="./homePage.html">首页</a></li>
+            <li><a href="./gallary.html">相册</a></li>
+            <li><a href="./diary.html">日志</a></li>
+            <li><a href="./myPage.html">个人中心</a></li>
+            <li><a id="themes">主题</a></li>
+            <div id="theme-select" class="theme-part">
+                <div class="themes">深空蓝</div>
+                <div class="themes">琉璃青</div>
+                <div class="themes">炽焰红</div>
+                <div class="themes">经典紫</div>
+            </div>
+        </ul>
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="player">
+        <audio src="../music/Merry Go.mp3" loop="loop" id="audio"></audio>
+        <div id="play"></div>
+    </div>
+    <div id="loading"></div>
+    <div id="page-container">
+        <div id="left-space">
+            <div id="unlogin">
+                <ul class="tipinfos align-center">
+                    <li><a>未登录！请先登录！</a><a class="infos" href="../index.html">登录</a></li>
+                </ul>
+            </div>
+            <div id="logined">
+                <div id="upload">
+                    <input type="button" id="up-button" value="选择文件">
+                    <input type="button" value="上传至相册" id="up-btn">
+                    <input type="button" id="show" value="点击选择按钮上传文件">
+                    <input type="file" accept="image/*" id="file-upload"/>
+                    <div id="upload-icon"></div>
+                </div>
+                <div id="pre" class="LR"></div>
+                <div id="nex" class="LR"></div>
+                <div class="container">
+                    <img src="../img/default_img.jpg" id="gallary">
+                </div> 
+            </div>
+            
+        </div>
+        <div id="right-space">
+            <div id="open-icon"></div>
+            <div id="img-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/1.jpg" class="g-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/2.jpg" class="g-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/3.jpg" class="g-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/4.jpg" class="g-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/5.jpg" class="g-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/6.jpg" class="g-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/7.jpg" class="g-skim">
+                <img src="../img/default_img.jpg" real_src="../img/photos/8.jpg" class="g-skim">
+            </div>
+        </div>
+    </div>
+    
+</body>
+    <script src="../js/main.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/gallary.js"></script>
+    <script src="../js/stars.js"></script>
+    <script src="../js/music.js"></script>
+</html>

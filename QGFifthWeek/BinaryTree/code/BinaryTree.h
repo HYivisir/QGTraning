@@ -11,24 +11,24 @@ typedef enum Status{
 }Status;
 
 
-Status InitBiTree(BiTree T);
+Status InitBiTree(BiTree *T);
 //操作结果：构造空二叉树T
-Status DestroyBiTree(BiTree T);
+Status DestroyBiTree(BiTree *T);
 //初始条件：二叉树T存在
 //操作结果：摧毁二叉树T
-Status CreateBiTree(BiTree T, char* definition);
+Status CreateBiTree(BiTree *T, char* definition);
 //初始条件： definition给出二叉树的定义
 //操作结果：按definition构造二叉树T
 
 
 //以下部分函数定义未指定参数类型
-Status PreOrderTraverse(BiTree T, Status (*visit)(TElemType e));
+Status PreOrderTraverse(BiTree *T, Status (*visit)(TElemType e));
 //初始条件：二叉树T存在，visit为对结点的操作的应用函数
 //操作结果：先序遍历T，对每个结点调用visit函数一次且仅一次，一旦visit失败，则操作失败
-Status InOrderTraverse(BiTree T, Status (*visit)(TElemType e));	//中序遍历
-Status PostOrderTraverse(BiTree T, Status (*visit)(TElemType e));	//后序遍历
-Status LevelOrderTraverse(BiTree T, Status (*visit)(TElemType e));	//层序遍历
-int Value(BiTNode T);			//构造出的二叉树求值
+Status InOrderTraverse(BiTree *T, Status (*visit)(TElemType e));	//中序遍历
+Status PostOrderTraverse(BiTree *T, Status (*visit)(TElemType e));	//后序遍历
+Status LevelOrderTraverse(BiTree *T, Status (*visit)(TElemType e));	//层序遍历
+int Value(BiTNode *T);			//构造出的二叉树求值
 /*
 提示：可在结点结构体中设置个Tag值标志数字与操作符来构造二叉树，
 可根据需要自行增加操作.
