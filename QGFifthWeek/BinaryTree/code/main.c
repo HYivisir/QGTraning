@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"BinaryTree.c"
-#include"AQueue.c"
 int main(){
     system("chcp 65001");
     char option;
@@ -9,7 +8,7 @@ int main(){
     int flag;
     char* definition;
     BiTree T;
-    while(option != '7'){
+    while(option != '9'){
         menu();
         scanf("%c",&option);
         gets(trash);
@@ -25,7 +24,7 @@ int main(){
             };
             case '2':{
                 if(isExist(flag)){
-                    printf("请输入字符串：\n");
+                    printf("请输入字符串(以'#'表示无子节点)：\n");
                     CreateBiTree(&T,definition);
                     getchar();
                 }else
@@ -35,16 +34,17 @@ int main(){
                 break;
             }
             case '3':{
-                if(isExist){
+                if(isExist(flag)){
                     DestroyBiTree(&T);
                     flag = 0;
+                    printf("摧毁二叉树成功！\n");
                 }else{
                     printf("树未初始化,没得销毁\n");
                 }
                 break;
             }
             case '4':{
-                if(isExist){
+                if(isExist(flag)){
                     PreOrderTraverse(&T,print);
                 }else{
                     printf("树未初始化!\n");
@@ -53,7 +53,7 @@ int main(){
                 break;
             }
             case '5':{
-                if(isExist){
+                if(isExist(flag)){
                     InOrderTraverse(&T,print);
                 }else{
                     printf("树未初始化!\n");
@@ -62,7 +62,7 @@ int main(){
                 break;
             }
             case '6':{
-                if(isExist){
+                if(isExist(flag)){
                     PostOrderTraverse(&T,print);
                 }else{
                     printf("树未初始化!\n");
@@ -71,6 +71,24 @@ int main(){
                 break;
             }
             case '7':{
+                if(isExist(flag)){
+                    LevelOrderTraverse(T,print);
+                }else{
+                    printf("树未初始化！\n");
+                }
+                break;
+            }
+            case '8':{
+                if(isExist(flag)){
+                    printf("请输入前缀表达式:\n");
+                    buildPrTree(&T);
+                    printf("前缀表达式的值为：%d\n",Value(&T));
+                }else{
+                    printf("树未初始化！\n");
+                }
+                break;
+            }
+            case '9':{
                 printf("感谢您的使用！\n");
                 system("pause");
                 exit(1);

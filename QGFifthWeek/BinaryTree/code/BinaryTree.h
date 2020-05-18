@@ -28,7 +28,7 @@ Status PreOrderTraverse(BiTree *T, Status (*visit)(TElemType e));
 Status InOrderTraverse(BiTree *T, Status (*visit)(TElemType e));	//中序遍历
 Status PostOrderTraverse(BiTree *T, Status (*visit)(TElemType e));	//后序遍历
 Status LevelOrderTraverse(BiTree *T, Status (*visit)(TElemType e));	//层序遍历
-int Value(BiTNode *T);			//构造出的二叉树求值
+int Value(BiTree *T);			//构造出的二叉树求值
 /*
 提示：可在结点结构体中设置个Tag值标志数字与操作符来构造二叉树，
 可根据需要自行增加操作.
